@@ -1,0 +1,411 @@
+/* RESET */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+@font-face {
+  font-family: "FontAwesome";
+  src: 	url('fonts/fontawesome/fontawesome-webfont.eot');
+  src: 	url('fonts/fontawesome/fontawesome-webfont.eot?#iefix') format('eot'),
+  		url('fonts/fontawesome/fontawesome-webfont.woff') format('woff'),
+  		url('fonts/fontawesome/fontawesome-webfont.ttf') format('truetype'),
+  		url('fonts/fontawesome/fontawesome-webfont.svg#FontAwesome') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body{
+background: url(images/bg.png) repeat left top;
+}
+
+#content{
+width:800px;
+margin:0 auto;
+color: #FFF;
+}
+
+.title{
+font-family: 'Rochester', cursive;
+text-align: center;
+padding:20px 0;
+font-size: 45px;
+text-shadow:0 -2px 2px rgba(0,0,0,0.5);
+border-bottom: solid 2px #27292a;
+
+}
+
+#currentTime{
+
+padding: 10px 0 50px;
+text-align: center;
+font-family: 'Open Sans Condensed', sans-serif;
+font-size: 200px;
+color:#6292ae;
+border-top: solid 1px #3c3d3f;
+}
+
+#timetoAlarm{
+text-align: center;
+font-family: 'Open Sans Condensed', sans-serif;
+font-size:16px;
+padding-bottom: 25px;
+
+border-bottom: solid 2px #27292a;
+}
+
+#controls{
+border-top: solid 1px #3c3d3f;
+padding-top: 40px;
+text-align: center;
+}
+
+.small{
+width: 90px;
+padding:20px 10px;
+color: #A2A8AD;
+text-align: center;
+background-image: linear-gradient(bottom, #313439 100%, #2B2E32 0%);
+background-image: -o-linear-gradient(bottom, #313439 100%, #2B2E32 0%);
+background-image: -moz-linear-gradient(bottom, #313439 100%, #2B2E32 0%);
+background-image: -webkit-linear-gradient(bottom, #313439 100%, #2B2E32 0%);
+background-image: -ms-linear-gradient(bottom, #313439 100%, #2B2E32 0%);
+background-color: #313439;	
+font-size: 30px;
+border: .1em solid #414346;
+-webkit-border-radius: 10px;
+-moz-border-radius:.3333em;
+border-radius: 10px;
+-webkit-box-shadow: 0 0 4px #1C2023;
+box-shadow: 0 0 .3333em #1C2023;
+margin:0 20px;
+
+}
+
+
+/* === DROPKICK CSS === */
+/* One container to bind them... */
+.dk_container {
+	background-image: linear-gradient(bottom, #313439 100%, #2B2E32 0%);
+	background-image: -o-linear-gradient(bottom, #313439 100%, #2B2E32 0%);
+	background-image: -moz-linear-gradient(bottom, #313439 100%, #2B2E32 0%);
+	background-image: -webkit-linear-gradient(bottom, #313439 100%, #2B2E32 0%);
+	background-image: -ms-linear-gradient(bottom, #313439 100%, #2B2E32 0%);
+	background-color: #313439;
+	
+	font-size: 0.75em;					/*changed to ems*/
+	margin-bottom: 1.5em;				/*changed to ems*/
+	border-radius: .3333em;				/*changed to ems*/
+
+	-webkit-box-shadow: 0 0 4px #1c2023;
+	box-shadow: 0 0 .3333em #1c2023;
+	
+	white-space: nowrap;				/*added this so that everything stays neatly on one line*/
+}
+
+.dk_container:focus {
+	outline: 0;
+}
+
+.dk_container a {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+/* Opens the dropdown and holds the menu label */
+.dk_toggle {							/*changed to ems*/
+	border: .1em solid #414346;
+	color: #a2a8ad;
+	padding: 0 4em 0 1em;				/*changed to ems - and removed top/bottom padding*/
+	text-shadow: #26292c 0px .05em 0;	/*changed to ems*/
+	border-radius: .3333em;				/*changed to ems*/
+	
+	line-height: 2.5em;					/*added this  instead of the padding top/bottom. we can now calculate it exactly */
+
+	-webkit-transition: border-color .5s;
+	-moz-transition: border-color .5s;
+	-o-transition: border-color .5s;
+	-ms-transition: border-color .5s;
+	transition: border-color .5s;
+	
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.dk_toggle:after {
+	font-family: "FontAwesome";
+	color: #c0c4c7;
+	font-size: 1em;						/*changed to ems*/
+	line-height: 2.5em;					/*exactly the same as the parent - so everything aligns vertically*/
+	content: "\f0dc";
+	text-shadow: 0 0 .05em #222427;		/*changed to ems*/
+	float: right;
+	margin-right: -3em;					/*changed to ems*/
+	/*margin-top: 4px;					won't need this, we've specified the lineheight for vertical aligning*/
+}
+
+/* Applied whenever the dropdown is open */
+.dk_open {
+z-index: 10;
+}
+
+.dk_open .dk_toggle {
+	/*background-image: url('images/arrow_2.png');*/
+	background-image: linear-gradient(bottom, #323538 0%, #3A3D40 100%);
+	background-image: -o-linear-gradient(bottom, #323538 0%, #3A3D40 100%);
+	background-image: -moz-linear-gradient(bottom, #323538 0%, #3A3D40 100%);
+	background-image: -webkit-linear-gradient(bottom, #323538 0%, #3A3D40 100%);
+	background-image: -ms-linear-gradient(bottom, #323538 0%, #3A3D40 100%);
+	 /*REMOVES ARROW IMAGE*/
+	border-color: #4e5153;
+	color: #fff;
+
+	-webkit-box-shadow: 0 .05em .1em #202224;
+	box-shadow: 0 .05em .1em #202224;
+	border-radius: .3333em;				/*changed to ems*/
+	z-index: 30;
+}
+
+.dk_open .dk_toggle:after {
+	/*I've removed a load of styles here, as they're all inherited from .dk_toggle:after */
+	color: #ededee;	
+	text-shadow: 0 0 .05em #272a2c;		/*changed to ems*/
+}
+
+/* The outer container of the options */
+.dk_options {
+	-webkit-box-shadow: 0 .05em .3em #191d20;	/*changed to ems*/
+	box-shadow: 0 .05em .3em #191d20;			/*changed to ems*/
+	border-radius: 0 0 .4em .4em;				/*changed to ems*/
+}
+
+.dk_options a {
+	padding: 0 1em;
+	line-height: 2.5em;					/*added this instead of the padding top/bottom. we can now calculate it exactly */
+	
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.dk_options li {
+	background-color: #2e3135;
+}
+
+.dk_options li:first-child {
+	display: none;
+}
+
+.dk_options #divider {
+	width: 90%;							/*flexible value - leave as it is!*/
+	height: .1em;						/*rounded to a neat ems value*/		
+	margin: auto;
+	background-color: #3a3c3f;
+}
+
+.dk_options li:last-child #divider {
+	display: none;
+}
+
+.dk_options a:hover,.dk_option_current a {
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 0 .05em 0 #282b2e;		/*change to ems*/
+}
+
+/* Inner container for options, this is what makes the scrollbar possible. */
+.dk_options_inner {
+	border: .05em solid #2e3135;		/*change to ems*/
+	border-bottom-width: .1em;			/*chamge to ems*/
+	border-bottom-color: #2e3135;
+	color: #a2a8ad;
+	/*max-height: 250px;				I've gotten rid of this */
+	text-shadow: #282b2e 0 .05em 0;		/*change to ems*/
+	border-radius: 0 0 .4em .4em;		/*change to ems*/
+}
+
+/* Set a max-height on the options inner */
+.dk_options_inner,.dk_touch .dk_options {
+	/*max-height: 250px;				not sure why?*/
+}
+
+/******  End Theme ******/
+/***** Critical to the continued enjoyment of working dropdowns ******/
+.dk_container {
+	display: none;
+	float: left;
+	position: relative;
+}
+
+.dk_container a {
+	/*width: auto!important;		I don't like using !important, but this needs to override a fixed pixel width which is added inline by the dropkick script - or comment out line 116 in the js*/
+	outline: 0;
+}
+
+.dk_toggle {
+	display: -moz-inline-stack;
+	display: inline-block;
+	*display: inline;
+	position: relative;
+	zoom: 1;
+}
+
+.dk_open {
+	position: relative;
+}
+
+.dk_open .dk_options {
+	display: block;
+}
+
+.dk_open .dk_label {
+	color: inherit;
+}
+
+.dk_options {
+	display: none;
+	margin-top: -.05em;			/*change to ems*/
+	position: absolute;
+	right: 0;
+	width: 100%;
+}
+
+.dk_options a,.dk_options a:link,.dk_options a:visited {
+	display: block;
+}
+
+.dk_options_inner {
+	overflow: auto;
+	position: relative;
+}
+
+.dk_touch .dk_options {
+	overflow: hidden;
+}
+
+.dk_touch .dk_options_inner {
+	max-height: none;
+	overflow: visible;
+}
+
+.dk_fouc select {
+	position: relative;
+	top: -99999em;
+	visibility: hidden;
+}
+
+/***** End Critical to the continued enjoyment of working dropdowns ******/
+
+#dk_container_dropdown {
+	font-size: 30px;
+}
+
+#dk_container_dateselect {
+	font-size: 15px;
+}
+
+#hour-input, #min-input{float: left;}
+
+#set-btn{
+padding: 20px 35px;
+}
+#snooze-btn{
+padding:20px 220px;
+margin:0 auto;
+}
+.button {
+    display: inline-block;
+    background: #6292AE;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#699DBB), color-stop(100%,#6292AE));
+    background: -moz-linear-gradient(center top, #699DBB 0%, #6292AE 100%);
+    -webkit-box-shadow: 0px 10px 0px 0px #3E5D6E, 0px -1px 0px 0px #3E5D6E inset;
+    -moz-box-shadow: 0px 10px 0px 0px #3E5D6E, 0px -1px 0px 0px #3E5D6E inset;
+    box-shadow: 0px 10 px 0px 0px #3E5D6E, 0px -1px 0px 0px #3E5D6E inset;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transition: background-color 0.2s linear;
+    -moz-transition: background-color 0.2s linear;
+    -o-transition: background-color 0.2s linear;
+    transition: background-color 0.2s linear;
+    text-shadow: 0px 1px 0px #006ac7;
+    
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 30px;
+    
+}
+.button:hover {
+    background: #1995fa;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#699DBB), color-stop(100%,#699DBB));
+    background: -moz-linear-gradient(center top, #699DBB 0%, #699DBB 100%);
+}
+.button:active {
+    -webkit-box-shadow: 0px 2px 0px 0px #3E5D6E, 0px -1px 0px 0px #1491ff inset;
+    -moz-box-shadow: 0px 2px 0px 0px #3E5D6E, 0px -1px 0px 0px #1491ff inset;
+    box-shadow: 0px 2px 0px 0px #3E5D6E, 0px -1px 0px 0px #1491ff inset;
+    -webkit-transition: background-position 0.3s linear;
+    -moz-transition: background-position 0.3s linear;
+    -o-transition: background-position 0.3s linear;
+    transition: background-position 0.3s linear;
+    -webkit-transform: translateY(3px);
+    -moz-transform: translateY(3px);
+    transform: translateY(3px);
+}
+
+#errors{
+float: none;
+clear: both;
+text-align: center;
+    font-family:'Open Sans Condensed', sans-serif;
+}
+#errors p{margin-bottom: 10px; font-size: 30px; color: #FF6666;}
+#button-area{margin:0 auto 50px;width:500px;}
