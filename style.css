@@ -56,6 +56,9 @@ table {
   font-style: normal;
 }
 
+a{
+text-decoration: none;
+}
 
 body{
 background: url(images/bg.png) repeat left top;
@@ -409,3 +412,29 @@ text-align: center;
 }
 #errors p{margin-bottom: 10px; font-size: 30px; color: #FF6666;}
 #button-area{margin:0 auto 50px;width:500px;}
+
+#lightbox {
+ display:none;
+ background:#000000;
+ opacity:0.9;
+ filter:alpha(opacity=90);
+ position:absolute;
+ top:0px;
+ left:0px;
+ min-width:100%;
+ min-height:100%;
+ z-index:1000;
+}
+
+#lightbox-panel {
+ display:none;
+ position:fixed;
+ top:100px;
+ left:50%;
+ margin-left:-325px;
+ width:650px;
+ background:#FFFFFF;
+ padding:10px 15px 10px 15px;
+ border:2px solid #CCCCCC;
+ z-index:1001;
+}
